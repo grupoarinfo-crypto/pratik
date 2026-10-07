@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRATIK NETWORK | Infraestrutura de TI em Jacutinga, Ouro Fino, Monte Sião e Andradas - MG</title>
+  <meta name="description" content="PRATIK NETWORK: suporte de TI, redes corporativas, monitoramento Zabbix 24x7, GLPI, servidores Windows/Linux e CFTV Hikvision, Giga e Digifort em Jacutinga, Ouro Fino, Monte Sião e Andradas - MG." />
+  <meta name="keywords" content="suporte de TI Jacutinga, TI Ouro Fino, TI Monte Sião, TI Andradas, redes corporativas MG, Zabbix, GLPI, servidores Windows, servidores Linux, CFTV Hikvision, Giga Security, Digifort, infraestrutura de TI Sul de Minas" />
+  <meta name="theme-color" content="#050608" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PRATIK NETWORK | Sua empresa não pode parar." />
+  <meta property="og:description" content="Infraestrutura de TI profissional para empresas que dependem de tecnologia. Jacutinga, Ouro Fino, Monte Sião e Andradas - MG." />
+  <meta property="og:image" content="/hero-datacenter.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PRATIK NETWORK",
+    "description": "Infraestrutura de TI, redes corporativas, monitoramento Zabbix 24x7, GLPI, servidores Windows/Linux e CFTV.",
+    "telephone": "+55 35 99738-5443",
+    "image": "/logo-pratik.png",
+    "address": { "@type": "PostalAddress", "addressLocality": "Jacutinga", "addressRegion": "MG", "addressCountry": "BR" },
+    "areaServed": [
+      { "@type": "City", "name": "Jacutinga" },
+      { "@type": "City", "name": "Ouro Fino" },
+      { "@type": "City", "name": "Monte Sião" },
+      { "@type": "City", "name": "Andradas" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-elev: #0b0d12;
+      --card: #0e1117;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
+      --text: #f2f4f8;
+      --muted: #8b93a7;
+      --primary: #0066ff;
+      --primary-soft: rgba(0, 102, 255, 0.12);
+      --success: #22c55e;
+      --radius: 14px;
+      --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    svg { flex-shrink: 0; }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 10px;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+      cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+    }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 10px 30px -10px rgba(0, 102, 255, .7); }
+    .btn-primary:hover { background: #1a75ff; transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(0, 102, 255, .85); }
+    .btn-ghost { border-color: var(--border-strong); color: var(--text); background: rgba(255,255,255,.02); }
+    .btn-ghost:hover { border-color: rgba(0, 102, 255, .6); background: var(--primary-soft); }
+    .btn-lg { padding: 17px 30px; font-size: 16px; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--primary);
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--primary); }
+
+    .section { padding: 100px 0; position: relative; }
+    .section-head { max-width: 640px; margin-bottom: 56px; }
+    .section-head h2 {
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.1; letter-spacing: -.02em; margin: 14px 0 16px; text-wrap: balance;
+    }
+    .section-head p { color: var(--muted); font-size: 17px; text-wrap: pretty; }
+
+    /* Header */
+    .header {
+      position: fixed; inset: 0 0 auto 0; z-index: 50;
+      transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .header.scrolled { background: rgba(5, 6, 8, .82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
+    .logo img { height: 44px; width: auto; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--muted); font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { padding: 10px 18px; font-size: 14px; }
+    .menu-toggle {
+      display: none; background: none; border: 1px solid var(--border-strong); color: var(--text);
+      width: 42px; height: 42px; border-radius: 10px; align-items: center; justify-content: center; cursor: pointer;
+    }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 4px; padding: 12px 20px 24px;
+      background: rgba(5, 6, 8, .97); border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a { padding: 12px 0; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--border); }
+    .mobile-menu .btn { margin-top: 16px; }
+    .mobile-menu.open { display: flex; }
+
+    /* Hero */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 140px 0 90px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: -2; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .45; }
+    .hero-bg::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 40%, rgba(5,6,8,.4), transparent 70%),
+        linear-gradient(90deg, rgba(5,6,8,.97) 0%, rgba(5,6,8,.8) 45%, rgba(5,6,8,.45) 100%),
+        linear-gradient(0deg, var(--bg) 0%, transparent 35%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, #000 30%, transparent 80%);
+    }
+    .hero-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center; }
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px;
+      border: 1px solid var(--border-strong); border-radius: 999px; background: rgba(255,255,255,.03);
+      font-size: 13px; color: var(--muted); margin-bottom: 28px;
+    }
+    .pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--success); }
+    .pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--success); animation: ping 1.8s cubic-bezier(0,0,.2,1) infinite; }
+    @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
+
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(42px, 7vw, 80px);
+      line-height: 1.02; letter-spacing: -.035em; text-wrap: balance;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero-sub { margin-top: 24px; font-size: clamp(17px, 2vw, 20px); color: #b4bbcc; max-width: 560px; text-wrap: pretty; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .stat strong { display: block; font-family: var(--font-display); font-size: 32px; font-weight: 700; letter-spacing: -.02em; }
+    .stat > span { font-size: 13px; color: var(--muted); }
+
+    /* Monitor panel */
+    .monitor {
+      background: rgba(11, 13, 18, .82); border: 1px solid var(--border-strong); border-radius: 18px;
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 40px 80px -30px rgba(0, 102, 255, .35), inset 0 1px 0 rgba(255,255,255,.05);
+      overflow: hidden;
+    }
+    .monitor-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .monitor-head .dots { display: flex; gap: 6px; }
+    .monitor-head .dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.12); }
+    .monitor-title { color: var(--muted); font-family: var(--font-display); letter-spacing: .04em; }
+    .live { display: inline-flex; align-items: center; gap: 6px; color: var(--success); font-weight: 600; font-size: 12px; }
+    .monitor-body { padding: 18px; display: grid; gap: 12px; }
+    .host { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: rgba(255,255,255,.02); }
+    .host-icon { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); }
+    .host-info { flex: 1; min-width: 0; }
+    .host-info b { display: block; font-size: 14px; font-weight: 600; }
+    .host-info small { color: var(--muted); font-size: 12px; }
+    .host-bar { height: 4px; background: rgba(255,255,255,.06); border-radius: 4px; margin-top: 8px; overflow: hidden; }
+    .host-bar span { display: block; height: 100%; background: var(--primary); border-radius: 4px; transition: width 1.2s ease; }
+    .badge-ok { font-size: 11px; font-weight: 600; color: var(--success); background: rgba(34,197,94,.1); padding: 3px 8px; border-radius: 6px; }
+    .monitor-foot { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
+    .monitor-foot div { padding: 14px; text-align: center; border-right: 1px solid var(--border); }
+    .monitor-foot div:last-child { border-right: 0; }
+    .monitor-foot strong { display: block; font-family: var(--font-display); font-size: 18px; }
+    .monitor-foot span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .service { background: var(--bg-elev); padding: 36px 32px; position: relative; transition: background .3s ease; }
+    .service::before {
+      content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .3s ease;
+      background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%), rgba(0,102,255,.14), transparent 60%);
+    }
+    .service:hover::before { opacity: 1; }
+    .service > * { position: relative; }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--primary-soft); color: var(--primary); border: 1px solid rgba(0,102,255,.25); margin-bottom: 24px;
+    }
+    .service h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 10px; letter-spacing: -.01em; }
+    .service p { color: var(--muted); font-size: 15px; }
+    .service .num { position: absolute; top: 32px; right: 32px; font-family: var(--font-display); font-size: 13px; color: rgba(255,255,255,.2); }
+
+    /* Differentials */
+    .diff { background: linear-gradient(180deg, var(--bg) 0%, #070a12 50%, var(--bg) 100%); }
+    .diff-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
+    .diff-inner .section-head { margin-bottom: 32px; position: sticky; top: 120px; }
+    .diff-list { display: grid; gap: 14px; }
+    .diff-item {
+      display: flex; gap: 20px; align-items: flex-start; padding: 26px 28px;
+      border: 1px solid var(--border); border-radius: var(--radius); background: var(--card);
+      transition: border-color .3s ease, transform .3s ease;
+    }
+    .diff-item:hover { border-color: rgba(0,102,255,.5); transform: translateX(6px); }
+    .diff-item .service-icon { margin: 0; width: 44px; height: 44px; }
+    .diff-item h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .diff-item p { color: var(--muted); font-size: 15px; }
+
+    /* Tech */
+    .tech-marquee { position: relative; overflow: hidden; padding: 8px 0; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+    .tech-track { display: flex; gap: 16px; width: max-content; animation: marquee 32s linear infinite; }
+    .tech-marquee:hover .tech-track { animation-play-state: paused; }
+    @keyframes marquee { to { transform: translateX(calc(-50% - 8px)); } }
+    .tech {
+      display: flex; align-items: center; gap: 14px; padding: 20px 28px; border: 1px solid var(--border);
+      border-radius: var(--radius); background: var(--card); min-width: 230px;
+    }
+    .tech-mark {
+      width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center;
+      font-family: var(--font-display); font-weight: 700; font-size: 15px; color: #fff; background: #151a24; border: 1px solid var(--border-strong);
+    }
+    .tech b { display: block; font-family: var(--font-display); font-size: 17px; font-weight: 600; }
+    .tech small { color: var(--muted); font-size: 13px; }
+    .tech-grid { display: none; }
+
+    /* CTA */
+    .cta-box {
+      position: relative; overflow: hidden; border-radius: 24px; padding: 72px 56px;
+      background: linear-gradient(135deg, #0047b3 0%, #0066ff 55%, #2b85ff 100%);
+      display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: center;
+    }
+    .cta-box::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at 100% 50%, #000, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 100% 50%, #000, transparent 70%);
+    }
+    .cta-box > * { position: relative; }
+    .cta-box h2 { font-family: var(--font-display); font-size: clamp(30px, 4.2vw, 48px); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; }
+    .cta-box p { margin-top: 16px; font-size: 18px; color: rgba(255,255,255,.85); max-width: 520px; }
+    .cta-side { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; justify-self: end; }
+    .btn-white { background: #fff; color: #0a1630; box-shadow: 0 16px 40px -14px rgba(0,0,0,.5); }
+    .btn-white:hover { transform: translateY(-2px); background: #eef3ff; }
+    .cta-phone { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: #fff; }
+    .cta-note { font-size: 13px; color: rgba(255,255,255,.75); }
+
+    /* Footer */
+    .footer { border-top: 1px solid var(--border); padding: 64px 0 32px; margin-top: 100px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+    .footer .logo img { height: 48px; margin-bottom: 18px; }
+    .footer p, .footer li { color: var(--muted); font-size: 14px; }
+    .footer h4 { font-family: var(--font-display); font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; color: var(--text); }
+    .footer li { margin-bottom: 10px; }
+    .footer li a:hover { color: var(--primary); }
+    .footer-bottom { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+
+    /* Floating WhatsApp */
+    .wa-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; color: #fff; display: grid; place-items: center;
+      box-shadow: 0 14px 34px -10px rgba(37, 211, 102, .7); transition: transform .2s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .monitor { max-width: 520px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .diff-inner { grid-template-columns: 1fr; gap: 0; }
+      .diff-inner .section-head { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 820px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .cta-box { grid-template-columns: 1fr; padding: 48px 28px; }
+      .cta-side { justify-self: start; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 72px 0; }
+      .hero { padding: 120px 0 64px; }
+      .hero-actions .btn { width: 100%; }
+      .hero-stats { gap: 28px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service { padding: 30px 24px; }
+      .diff-item { padding: 22px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .logo img { height: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97.99-3.62-.23-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.42-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.42 9.83-9.84 9.83M20.42 3.48A11.75 11.75 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.94L.07 24l6.3-1.65a11.87 11.87 0 0 0 5.68 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></symbol>
+      <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+      <symbol id="i-cctv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16.75 12h3.63a1 1 0 0 1 .65 1.76L14.5 19.5M16.75 12 9 6.5M16.75 12l-4.28 6.66a1 1 0 0 1-1.38.3L3.4 14.26a1 1 0 0 1-.3-1.38L7.4 6.2a1 1 0 0 1 1.38-.3L9 6.5M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15M2 21v-4M7 9h.01"/></symbol>
+      <symbol id="i-remote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4M9 10l2 2 4-4"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34M4 6h.01M2.29 9.62a10 10 0 1 0 19.02-1.27M16.24 7.76a6 6 0 1 0-8.01 8.91M12 18h.01M17.99 11.66a6 6 0 0 1-2.22 5.01"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></symbol>
+      <symbol id="i-backup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#inicio" class="logo" aria-label="PRATIK NETWORK - início">
+        <img src="logo-pratik-white.png" alt="PRATIK NETWORK" width="1345" height="352" />
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav-links">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#tecnologias">Tecnologias</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary nav-cta js-wa" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="22" height="22" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary js-wa" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>
+        Falar no WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Hero -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-bg"><img src="hero-datacenter.jpg" alt="" fetchpriority="high" /></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="reveal">
+          <div class="status-pill"><span class="pulse" aria-hidden="true"></span> Monitoramento ativo 24x7 · Sul de Minas</div>
+          <h1 id="hero-title">Sua empresa <span>não pode parar.</span></h1>
+          <p class="hero-sub">Infraestrutura de TI profissional para empresas que dependem de tecnologia.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg js-wa" href="#" target="_blank" rel="noopener">
+              <svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#servicos">
+              Conhecer serviços
+              <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong><span data-count="24">0</span>x7</strong><span>Monitoramento contínuo</span></div>
+            <div class="stat"><strong><span data-count="99.9" data-decimals="1">0</span>%</strong><span>Disponibilidade alvo</span></div>
+            <div class="stat"><strong>Remoto + Local</strong><span>Atendimento híbrido</span></div>
+          </div>
+        </div>
+
+        <aside class="monitor reveal" aria-label="Exemplo de painel de monitoramento">
+          <div class="monitor-head">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="monitor-title">NOC · PRATIK</span>
+            <span class="live"><span class="pulse" aria-hidden="true"></span> LIVE</span>
+          </div>
+          <div class="monitor-body">
+            <div class="host">
+              <div class="host-icon"><svg width="18" height="18" aria-hidden="true"><use href="#i-server"/></svg></div>
+              <div class="host-info"><b>SRV-WIN-AD01</b><small>CPU <span class="js-metric" data-min="12" data-max="38">22</span>%</small><div class="host-bar"><span class="js-bar" style="width:22%"></span></div></div>
+              <span class="badge-ok">OK</span>
+            </div>
+            <div class="host">
+              <div class="host-icon"><svg width="18" height="18" aria-hidden="true"><use href="#i-server"/></svg></div>
+              <div class="host-info"><b>SRV-LNX-ZBX</b><small>CPU <span class="js-metric" data-min="8" data-max="30">15</span>%</small><div class="host-bar"><span class="js-bar" style="width:15%"></span></div></div>
+              <span class="badge-ok">OK</span>
+            </div>
+            <div class="host">
+              <div class="host-icon"><svg width="18" height="18" aria-hidden="true"><use href="#i-network"/></svg></div>
+              <div class="host-info"><b>CORE-SWITCH</b><small>Link <span class="js-metric" data-min="40" data-max="72">54</span>%</small><div class="host-bar"><span class="js-bar" style="width:54%"></span></div></div>
+              <span class="badge-ok">OK</span>
+            </div>
+            <div class="host">
+              <div class="host-icon"><svg width="18" height="18" aria-hidden="true"><use href="#i-cctv"/></svg></div>
+              <div class="host-info"><b>NVR-CFTV-01</b><small>32 câmeras online</small><div class="host-bar"><span style="width:100%"></span></div></div>
+              <span class="badge-ok">OK</span>
+            </div>
+          </div>
+          <div class="monitor-foot">
+            <div><strong>128</strong><span>Hosts</span></div>
+            <div><strong>0</strong><span>Alertas</span></div>
+            <div><strong>99.9%</strong><span>Uptime</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 2. Serviços -->
+    <section class="section" id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Serviços</span>
+          <h2 id="servicos-title">Tudo o que sua infraestrutura precisa, em um só parceiro.</h2>
+          <p>Da rede ao servidor, do chamado à câmera: cuidamos da tecnologia para você focar no seu negócio.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service reveal">
+            <span class="num">01</span>
+            <div class="service-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-headset"/></svg></div>
+            <h3>Suporte de TI</h3>
+            <p>Atendimento ágil para usuários, estações de trabalho, impressoras e sistemas do dia a dia.</p>
+          </article>
+          <article class="service reveal">
+            <span class="num">02</span>
+            <div class="service-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-network"/></svg></div>
+            <h3>Redes Corporativas</h3>
+            <p>Projeto, cabeamento estruturado, switches, firewall, VLANs e Wi-Fi corporativo de alta performance.</p>
+          </article>
+          <article class="service reveal">
+            <span class="num">03</span>
+            <div class="service-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-activity"/></svg></div>
+            <h3>Monitoramento Zabbix 24x7</h3>
+            <p>Visibilidade total de servidores, links e serviços com alertas proativos antes que o problema aconteça.</p>
+          </article>
+          <article class="service reveal">
+            <span class="num">04</span>
+            <div class="service-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-ticket"/></svg></div>
+            <h3>GLPI</h3>
+            <p>Implantaç��o de Service Desk com gestão de chamados, inventário de ativos e controle de SLA.</p>
+          </article>
+          <article class="service reveal">
+            <span class="num">05</span>
+            <div class="service-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-server"/></svg></div>
+            <h3>Servidores Windows/Linux</h3>
+            <p>Active Directory, file server, virtualização, atualizações e hardening de servidores críticos.</p>
+          </article>
+          <article class="service reveal">
+            <span class="num">06</span>
+            <div class="service-icon"><svg width="22" height="22" aria-hidden="true"><use href="#i-cctv"/></svg></div>
+            <h3>CFTV</h3>
+            <p>Projetos e manutenção com Hikvision, Giga e Digifort: câmeras, NVRs e acesso remoto seguro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Diferenciais -->
+    <section class="section diff" id="diferenciais" aria-labelledby="diferenciais-title">
+      <div class="container diff-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Diferenciais</span>
+          <h2 id="diferenciais-title">Prevenção em vez de apagar incêndio.</h2>
+          <p>Trabalhamos como um MSP: monitoramos, antecipamos falhas e agimos rápido — remotamente ou no local.</p>
+          <a class="btn btn-ghost js-wa" href="#" target="_blank" rel="noopener" style="margin-top:28px">
+            Solicitar diagnóstico
+            <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+        <ul class="diff-list">
+          <li class="diff-item reveal">
+            <div class="service-icon"><svg width="20" height="20" aria-hidden="true"><use href="#i-remote"/></svg></div>
+            <div><h3>Atendimento remoto</h3><p>Resolução imediata via acesso seguro, sem esperar deslocamento.</p></div>
+          </li>
+          <li class="diff-item reveal">
+            <div class="service-icon"><svg width="20" height="20" aria-hidden="true"><use href="#i-pin"/></svg></div>
+            <div><h3>Atendimento presencial</h3><p>Equipe técnica em Jacutinga, Ouro Fino, Monte Sião, Andradas e região.</p></div>
+          </li>
+          <li class="diff-item reveal">
+            <div class="service-icon"><svg width="20" height="20" aria-hidden="true"><use href="#i-radar"/></svg></div>
+            <div><h3>Monitoramento preventivo</h3><p>Alertas automáticos de disco, CPU, links e serviços antes da parada.</p></div>
+          </li>
+          <li class="diff-item reveal">
+            <div class="service-icon"><svg width="20" height="20" aria-hidden="true"><use href="#i-backup"/></svg></div>
+            <div><h3>Backup</h3><p>Rotinas locais e em nuvem, com testes de restauração periódicos.</p></div>
+          </li>
+          <li class="diff-item reveal">
+            <div class="service-icon"><svg width="20" height="20" aria-hidden="true"><use href="#i-shield"/></svg></div>
+            <div><h3>Segurança da informação</h3><p>Firewall, antivírus gerenciado, controle de acesso e boas práticas LGPD.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Tecnologias -->
+    <section class="section" id="tecnologias" aria-labelledby="tecnologias-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tecnologias</span>
+          <h2 id="tecnologias-title">Ferramentas de nível enterprise.</h2>
+          <p>Trabalhamos com as plataformas mais confiáveis do mercado de infraestrutura e segurança.</p>
+        </div>
+      </div>
+      <div class="tech-marquee reveal" aria-label="Tecnologias utilizadas">
+        <ul class="tech-track" id="techTrack">
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Zb</span><div><b>Zabbix</b><small>Monitoramento</small></div></li>
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Gl</span><div><b>GLPI</b><small>Service Desk</small></div></li>
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Ws</span><div><b>Windows Server</b><small>Servidores</small></div></li>
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Lx</span><div><b>Linux</b><small>Servidores</small></div></li>
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Hk</span><div><b>Hikvision</b><small>CFTV</small></div></li>
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Gs</span><div><b>Giga Security</b><small>CFTV</small></div></li>
+          <li class="tech"><span class="tech-mark" aria-hidden="true">Df</span><div><b>Digifort</b><small>VMS</small></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="section" id="contato" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2 id="cta-title">Pronto para uma TI que trabalha a seu favor?</h2>
+            <p>Fale agora com um especialista e receba um diagnóstico da sua infraestrutura sem compromisso.</p>
+          </div>
+          <div class="cta-side">
+            <a class="btn btn-white btn-lg js-wa" href="#" target="_blank" rel="noopener">
+              <svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
+              Falar no WhatsApp
+            </a>
+            <a class="cta-phone" href="tel:+5535997385443">+55 35 99738-5443</a>
+            <span class="cta-note">Atendimento em Jacutinga, Ouro Fino, Monte Sião e Andradas - MG</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Rodapé -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#inicio" class="logo"><img src="logo-pratik-white.png" alt="PRATIK NETWORK" width="1345" height="352" loading="lazy" /></a>
+          <p>Infraestrutura de TI, redes corporativas, monitoramento e CFTV para empresas do Sul de Minas Gerais.</p>
+        </div>
+        <div>
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Suporte de TI</a></li>
+            <li><a href="#servicos">Redes Corporativas</a></li>
+            <li><a href="#servicos">Monitoramento Zabbix</a></li>
+            <li><a href="#servicos">GLPI</a></li>
+            <li><a href="#servicos">Servidores e CFTV</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Atendimento</h4>
+          <ul>
+            <li>Jacutinga - MG</li>
+            <li>Ouro Fino - MG</li>
+            <li>Monte Sião - MG</li>
+            <li>Andradas - MG</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="tel:+5535997385443">+55 35 99738-5443</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> PRATIK NETWORK. Todos os direitos reservados.</span>
+        <span>Suporte de TI em Jacutinga, Ouro Fino, Monte Sião e Andradas</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg width="30" height="30" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <script>
+    (function () {
+      var WA_NUMBER = "5535997385443";
+      var WA_TEXT = "Olá! Vim pelo site da PRATIK NETWORK e gostaria de falar sobre infraestrutura de TI.";
+      var waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_TEXT);
+      document.querySelectorAll(".js-wa").forEach(function (a) { a.href = waUrl; });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      var header = document.getElementById("header");
+      var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 20); };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      var toggle = document.getElementById("menuToggle");
+      var menu = document.getElementById("mobileMenu");
+      var setMenu = function (open) {
+        menu.classList.toggle("open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        toggle.querySelector("use").setAttribute("href", open ? "#i-close" : "#i-menu");
+        if (open) header.classList.add("scrolled"); else onScroll();
+      };
+      toggle.addEventListener("click", function () { setMenu(!menu.classList.contains("open")); });
+      menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+
+      var track = document.getElementById("techTrack");
+      Array.prototype.slice.call(track.children).forEach(function (item) {
+        var clone = item.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+      });
+
+      var animateCount = function (el) {
+        var target = parseFloat(el.dataset.count);
+        var decimals = parseInt(el.dataset.decimals || "0", 10);
+        var start = performance.now();
+        var duration = 1400;
+        var step = function (now) {
+          var p = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          entry.target.querySelectorAll("[data-count]").forEach(animateCount);
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach(function (el, i) {
+        el.style.transitionDelay = (i % 3) * 80 + "ms";
+        io.observe(el);
+      });
+
+      document.querySelectorAll(".service").forEach(function (card) {
+        card.addEventListener("pointermove", function (e) {
+          var r = card.getBoundingClientRect();
+          card.style.setProperty("--mx", e.clientX - r.left + "px");
+          card.style.setProperty("--my", e.clientY - r.top + "px");
+        });
+      });
+
+      var metrics = document.querySelectorAll(".js-metric");
+      setInterval(function () {
+        metrics.forEach(function (m) {
+          var min = +m.dataset.min, max = +m.dataset.max;
+          var v = Math.round(min + Math.random() * (max - min));
+          m.textContent = v;
+          var bar = m.closest(".host-info").querySelector(".js-bar");
+          if (bar) bar.style.width = v + "%";
+        });
+      }, 2200);
+    })();
+  </script>
+</body>
+</html>
